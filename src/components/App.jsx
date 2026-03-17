@@ -65,6 +65,11 @@ function App() {
     setActiveModal("");
   }
 
+  function handleAddGarmentSubmit(e) {
+    e.preventDefault();
+    handleCloseModal();
+  }
+
   return (
     <div className="page">
       <Header
@@ -81,9 +86,42 @@ function App() {
       <Footer />
 
       <ModalWithForm
+        title="New garment"
+        name="add-garment"
+        buttonText="Add garment"
         isOpen={activeModal === "add-garment"}
         onClose={handleCloseModal}
-      />
+        onSubmit={handleAddGarmentSubmit}
+      >
+        <label className="modal__label">
+          Name
+          <input className="modal__input" type="text" placeholder="Name" />
+        </label>
+
+        <label className="modal__label">
+          Image
+          <input className="modal__input" type="url" placeholder="Image URL" />
+        </label>
+
+        <fieldset className="modal__fieldset">
+          <legend className="modal__legend">Select the weather type:</legend>
+
+          <label className="modal__radio-label">
+            <input type="radio" name="weather" value="hot" />
+            Hot
+          </label>
+
+          <label className="modal__radio-label">
+            <input type="radio" name="weather" value="warm" />
+            Warm
+          </label>
+
+          <label className="modal__radio-label">
+            <input type="radio" name="weather" value="cold" />
+            Cold
+          </label>
+        </fieldset>
+      </ModalWithForm>
 
       <ItemModal
         isOpen={activeModal === "preview"}

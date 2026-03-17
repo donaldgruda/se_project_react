@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import logo from "../assets/Logo.svg";
 import avatar from "../assets/avatar.svg";
 function Header({ handleOpenAddModal, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {

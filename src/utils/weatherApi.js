@@ -1,8 +1,8 @@
-import { coordinates, APIkey } from "./constants";
+import { coordinates, apikey } from "./constants";
 
 function getWeatherData() {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&units=imperial&appid=${APIkey}`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&units=imperial&appid=${apikey}`,
   ).then((res) => {
     if (!res.ok) {
       return Promise.reject(`Error: ${res.status}`);

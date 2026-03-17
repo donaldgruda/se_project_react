@@ -1,6 +1,15 @@
 import { useEffect } from "react";
 import closeIcon from "../assets/close-icon.svg";
-function ModalWithForm({ isOpen, onClose }) {
+
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  name,
+  isOpen,
+  onClose,
+  onSubmit,
+}) {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -17,55 +26,22 @@ function ModalWithForm({ isOpen, onClose }) {
     };
   }, [isOpen, onClose]);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    onClose();
-  }
   return (
-    <div className={`modal ${isOpen ? "modal_opened" : ""}`} onClick={onClose}>
+    <div
+      className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}
+      onClick={onClose}
+    >
       <div className="modal__content" onClick={(e) => e.stopPropagation()}>
         <button className="modal__close" type="button" onClick={onClose}>
           <img src={closeIcon} alt="Close" />
         </button>
 
-        <h2 className="modal__title">New garment</h2>
+        <h2 className="modal__title">{title}</h2>
 
-        <form className="modal__form" onSubmit={handleSubmit}>
-          <label className="modal__label">
-            Name
-            <input className="modal__input" type="text" placeholder="Name" />
-          </label>
-
-          <label className="modal__label">
-            Image
-            <input
-              className="modal__input"
-              type="url"
-              placeholder="Image URL"
-            />
-          </label>
-
-          <fieldset className="modal__fieldset">
-            <legend className="modal__legend">Select the weather type:</legend>
-
-            <label className="modal__radio-label">
-              <input type="radio" name="weather" value="hot" />
-              Hot
-            </label>
-
-            <label className="modal__radio-label">
-              <input type="radio" name="weather" value="warm" />
-              Warm
-            </label>
-
-            <label className="modal__radio-label">
-              <input type="radio" name="weather" value="cold" />
-              Cold
-            </label>
-          </fieldset>
-
+        <form className="modal__form" name={name} onSubmit={onSubmit}>
+          {children}
           <button className="modal__submit" type="submit">
-            Add garment
+            {buttonText}
           </button>
         </form>
       </div>

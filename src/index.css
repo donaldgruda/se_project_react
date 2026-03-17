@@ -1,3 +1,5 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts.css");
 :root {
   font-family: "Cabinet Grotesk", "Inter", Arial, sans-serif;
   font-synthesis: none;
