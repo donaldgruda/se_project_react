@@ -21,7 +21,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [weatherData, setWeatherData] = useState({
-    temperature: 0,
+    temperature: { F: 0, C: 0 },
     city: "",
     type: "",
   });
@@ -57,13 +57,13 @@ function App() {
   useEffect(() => {
     getWeatherData()
       .then((data) => {
-        const parsed = parseWeatherData(data);
-        const type = getWeatherCondition(parsed.temperature.F);
+        const parsedWeather = parseWeatherData(data);
+        const type = getWeatherCondition(parsedWeather.temperature.F);
 
         setWeatherData({
-          temperature: parsed.temperature,
-          city: parsed.city,
-          type: type,
+          temperature: parsedWeather.temperature,
+          city: parsedWeather.city,
+          type,
         });
       })
       .catch(console.error);
@@ -96,12 +96,10 @@ function App() {
   }
 
   function handleDeleteCard() {
-    console.log("DELETING:", selectedCard);
-
-    deleteItem(selectedCard.id)
+    deleteItem(selectedCard._id)
       .then(() => {
         setClothingItems((prevItems) =>
-          prevItems.filter((item) => item.id !== selectedCard.id),
+          prevItems.filter((item) => item._id !== selectedCard._id),
         );
         setSelectedCard({});
         handleCloseModal();
