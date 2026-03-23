@@ -12,8 +12,14 @@ function getWeatherData() {
 }
 
 function parseWeatherData(data) {
+  const tempF = Math.round(data.main.temp);
+  const tempC = Math.round((tempF - 32) * (5 / 9));
+
   return {
-    temperature: data.main.temp,
+    temperature: {
+      F: tempF,
+      C: tempC,
+    },
     city: data.name,
   };
 }
