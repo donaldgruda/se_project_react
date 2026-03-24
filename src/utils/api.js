@@ -1,12 +1,14 @@
 const baseUrl = "http://localhost:3001";
 
+function checkResponse(res) {
+  if (!res.ok) {
+    return Promise.reject(`Error: ${res.status}`);
+  }
+  return res.json();
+}
+
 function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    if (!res.ok) {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-    return res.json();
-  });
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 function addItem(item) {
@@ -16,23 +18,13 @@ function addItem(item) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(item),
-  }).then((res) => {
-    if (!res.ok) {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-    return res.json();
-  });
+  }).then(checkResponse);
 }
 
 function deleteItem(id) {
-  return fetch(`http://localhost:3001/items/${id}`, {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-  }).then((res) => {
-    if (!res.ok) {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-    return res.json();
-  });
+  }).then(checkResponse);
 }
 
 export { getItems, addItem, deleteItem };

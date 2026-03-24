@@ -1,0 +1,42 @@
+.modal__content_type_image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 32px 32px;
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__caption {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal__weather {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.modal__delete-btn {
+  border: none;
+  background: none;
+  color: #ff4d00;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}

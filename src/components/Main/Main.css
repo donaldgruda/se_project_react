@@ -1,0 +1,19 @@
+.main {
+  margin-top: 28px;
+}
+
+.main__text {
+  margin: 40px 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 325px);
+  gap: 20px;
+}

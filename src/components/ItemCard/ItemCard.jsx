@@ -1,3 +1,4 @@
+import "./ItemCard.css";
 function ItemCard({ item, onCardClick }) {
   return (
     <li className="card" onClick={() => onCardClick(item)}>

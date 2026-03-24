@@ -1,0 +1,46 @@
+.modal__content_type_confirm {
+  width: 670px;
+  padding: 60px 151px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal__confirm-text {
+  margin: 0 0 40px;
+  text-align: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__confirm-delete {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 0 24px;
+  color: #ff4d00;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.modal__confirm-cancel {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+}

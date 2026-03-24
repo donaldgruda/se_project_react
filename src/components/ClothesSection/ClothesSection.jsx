@@ -1,5 +1,5 @@
-import ItemCard from "./ItemCard";
-
+import ItemCard from "../ItemCard/ItemCard";
+import "./ClothesSection.css";
 function ClothesSection({
   clothingItems,
   handleCardClick,

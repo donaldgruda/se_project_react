@@ -1,7 +1,8 @@
-import ToggleSwitch from "./ToggleSwitch/ToggleSwitch";
-import logo from "../assets/Logo.svg";
-import avatar from "../assets/avatar.svg";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import logo from "../../assets/Logo.svg";
+import avatar from "../../assets/avatar.svg";
 import { Link } from "react-router-dom";
+import "./Header.css";
 function Header({ handleOpenAddModal, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",

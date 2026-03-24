@@ -9,12 +9,12 @@ import {
   getWeatherCondition,
 } from "../utils/weatherApi";
 import { useState, useEffect } from "react";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import ItemModal from "./ItemModal";
+import Header from "./Header/Header";
+import Main from "./Main/Main";
+import Footer from "./Footer/Footer";
+import ItemModal from "./ItemModal/ItemModal";
 import { Routes, Route } from "react-router-dom";
-import Profile from "./Profile";
+import Profile from "./Profile/Profile";
 
 function App() {
   const [clothingItems, setClothingItems] = useState([]);
@@ -38,20 +38,6 @@ function App() {
         setClothingItems(data);
       })
       .catch(console.error);
-  }, []);
-
-  useEffect(() => {
-    function handleEscClose(e) {
-      if (e.key === "Escape") {
-        handleCloseModal();
-      }
-    }
-
-    document.addEventListener("keydown", handleEscClose);
-
-    return () => {
-      document.removeEventListener("keydown", handleEscClose);
-    };
   }, []);
 
   useEffect(() => {
@@ -86,10 +72,11 @@ function App() {
     setActiveModal("");
   }
 
-  function handleAddGarmentSubmit(item) {
+  function handleAddGarmentSubmit(item, resetForm) {
     addItem(item)
       .then((savedItem) => {
         setClothingItems((prevItems) => [savedItem, ...prevItems]);
+        resetForm();
         handleCloseModal();
       })
       .catch(console.error);

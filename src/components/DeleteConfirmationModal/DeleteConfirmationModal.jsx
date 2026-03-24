@@ -1,5 +1,7 @@
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "../ModalWithForm/ModalWithForm.css";
+import "./DeleteConfirmationModal.css";
 import closeIcon from "../../assets/close-icon.svg";
+
 function DeleteConfirmationModal({ isOpen, onClose, onConfirm }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`} onClick={onClose}>

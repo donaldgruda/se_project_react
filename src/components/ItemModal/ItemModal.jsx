@@ -1,5 +1,6 @@
-import closeIcon from "../assets/close-icon.svg";
-
+import closeIcon from "../../assets/close-icon.svg";
+import "./ItemModal.css";
+import "../ModalWithForm/ModalWithForm.css";
 function ItemModal({ card, isOpen, onClose, onDeleteClick }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`} onClick={onClose}>
