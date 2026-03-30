@@ -28,3 +28,8 @@ This project can be deployed with GitHub Pages.
 ## Author
 
 Donald
+
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/70a15a3d972a4bcf81a5558cf6b6f309), where I describe my
+project and some challenges I faced while building it.

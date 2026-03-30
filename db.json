@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "_id": 0,
-      "name": "Beanie",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Beanie.png?etag=bc10497cc80fa557f036e94f9999f7b2",
-      "id": "97f0"
-    },
-    {
       "_id": 2,
       "name": "Cap",
       "weather": "hot",
@@ -20,13 +13,6 @@
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf",
       "id": "fc9a"
-    },
-    {
-      "_id": 6,
-      "name": "Jacket",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jacket.png?etag=f4bb188deaa25ac84ce2338be2d404ad",
-      "id": "84ea"
     },
     {
       "_id": 7,
@@ -48,13 +34,6 @@
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sandals.png?etag=9bea85a77c0306586d2b71a33b626d41",
       "id": "89b8"
-    },
-    {
-      "_id": 10,
-      "name": "Scarf",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
-      "id": "d5d1"
     },
     {
       "_id": 11,
@@ -97,6 +76,12 @@
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
       "id": "7c9d"
+    },
+    {
+      "id": "2d1d",
+      "name": "clothes ",
+      "imageUrl": "data:image/jpeg;base64,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",
+      "weather": "cold"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
